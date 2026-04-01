@@ -30,7 +30,12 @@ h1 {
 </head>
 
 <body><img src="images/meee.jpg" style="width:200px;border-radius:50%;">
-<div class="container">
+<audio id="bgm" loop>
+  <source src="music/happy-song.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()">🎵 音樂</button>
+    <div class="container">
     <h1>個人履歷</h1>
     <p><strong>姓名：</strong>謝羽喬</p>
     <p><strong>學校：</strong>亞洲大學</p>
@@ -52,6 +57,43 @@ h1 {
 <script>
 function sayHi(){
     alert("你好！歡迎來看我的履歷！");
+}
+</script>
+let audio = document.getElementById("bgm");
+audio.volume = 0;
+
+function fadeIn() {
+    let vol = 0;
+    audio.play();
+    let fade = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.05;
+            audio.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 100);
+}
+
+function fadeOut() {
+    let vol = audio.volume;
+    let fade = setInterval(() => {
+        if (vol > 0) {
+            vol -= 0.05;
+            audio.volume = vol;
+        } else {
+            audio.pause();
+            clearInterval(fade);
+        }
+    }, 100);
+}
+
+function toggleMusic(){
+    if(audio.paused){
+        fadeIn();
+    } else {
+        fadeOut();
+    }
 }
 </script>
 </body>
