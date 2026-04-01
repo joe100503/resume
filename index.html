@@ -11,6 +11,7 @@ body {
     background: #f5f5f5;
 }
 
+/* 卡片 */
 .container {
     background: white;
     padding: 20px;
@@ -19,6 +20,7 @@ body {
     margin: auto;
 }
 
+/* 韓系按鈕 */
 .btn {
     display: inline-block;
     margin-bottom: 20px;
@@ -29,6 +31,21 @@ body {
     border-radius: 5px;
 }
 
+/* 🎵 音樂按鈕（浮動） */
+.music-btn {
+    position: fixed;
+    top: 260px;
+    left: 60%;
+    transform: translateX(-50%);
+    padding: 10px 14px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* 一般按鈕 */
 button {
     margin-top: 10px;
     padding: 8px 12px;
@@ -42,14 +59,19 @@ button {
 
 <body>
 
+<!-- 韓系版本按鈕 -->
 <a href="korean.html" class="btn">👉 韓系版本</a>
-    <img src="images/meee.jpg" style="width:200px;border-radius:50%; display:block; margin:20px auto;">
 
+<!-- 照片 -->
+<img src="images/meee.jpg" style="width:200px;border-radius:50%; display:block; margin:20px auto;">
+
+<!-- 🎧 音樂 -->
 <audio id="bgm" loop>
     <source src="music/happy-song.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="toggleMusic()">🎵 音樂</button>
+<!-- 🎵 浮動音樂按鈕 -->
+<button class="music-btn" onclick="toggleMusic()">🎵 音樂</button>
 
 <div class="container">
     <h1>個人履歷</h1>
@@ -69,10 +91,10 @@ button {
 
     <button onclick="sayHi()">點我</button>
 
+    <!-- 音樂來源 -->
     <p style="font-size:12px;color:#aaa;margin-top:20px;">
-🎵 Music: Advertising - Scandinavianz
-</p>
-
+    🎵 Music: Advertising - Scandinavianz
+    </p>
 </div>
 
 <script>
