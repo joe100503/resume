@@ -6,110 +6,172 @@
 
 <style>
 body {
-    font-family: Arial;
-    margin: 40px;
-    background: #f5f5f5;
+    font-family: "Noto Sans TC", Arial;
+    margin: 0;
+    background: linear-gradient(135deg, #fdfbfb, #e0eafc);
 }
 
-/* 卡片 */
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    margin: auto;
+/* 頂部 */
+.header {
+    text-align: center;
+    padding: 50px 20px 20px;
 }
 
-/* 韓系按鈕 */
-.btn {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 8px 12px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* 🔥 照片＋音樂按鈕區（關鍵） */
-.top-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 30px;
-}
-
-/* 照片 */
 .avatar {
-    width: 200px;
+    width: 150px;
     border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-/* 音樂按鈕（不浮動） */
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* 音樂按鈕 */
 .music-btn {
-    padding: 10px 14px;
-    background: #444;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #6c7ae0;
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .music-btn:hover {
-    background: #666;
+    background: #5563c1;
 }
 
-/* 一般按鈕 */
-button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #444;
+/* 卡片 */
+.section {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+}
+
+h2 {
+    border-left: 5px solid #6c7ae0;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+/* 導覽按鈕 */
+.btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 8px 14px;
+    background: #333;
     color: white;
-    border: none;
-    border-radius: 5px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* Email 樣式 */
+a {
+    color: #6c7ae0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 </style>
 </head>
 
-<body>
+<body onload="welcome()">
 
-<!-- 韓系版本 -->
 <a href="korean.html" class="btn">👉 韓系版本</a>
 
-<!-- 🔥 照片＋音樂按鈕（重點就在這） -->
-<div class="top-area">
+<!-- 頂部 -->
+<div class="header">
     <img src="images/meee.jpg" class="avatar">
+    <div class="name">謝羽喬</div>
+    <div>亞洲大學｜114022105</div>
 
     <button class="music-btn" onclick="toggleMusic()">🎵 音樂</button>
 </div>
 
-<!-- 🎧 音樂 -->
+<!-- 音樂 -->
 <audio id="bgm" loop>
     <source src="images/music/happy-song.mp3" type="audio/mpeg">
 </audio>
 
-<div class="container">
-    <h1>個人履歷</h1>
-    <p><strong>姓名：</strong>謝羽喬</p>
-    <p><strong>學校：</strong>亞洲大學</p>
-    <p><strong>學號：</strong>114022105</p>
-
+<!-- 自我介紹 -->
+<div class="section">
     <h2>自我介紹</h2>
-    <p>我是亞洲大學的學生，對學習新技術充滿熱情。</p>
+    <p>目前就讀於亞洲大學，對學習新技術充滿熱情，也喜歡探索不同領域，以及思考人生哲理、心理學。</p>
+</div>
 
-    <h2>技能</h2>
+<!-- 學歷 -->
+<div class="section">
+    <h2>學歷</h2>
+    <p><strong>亞洲大學</strong><br>人工智慧學系（在學中）</p>
+    <p><strong>僑泰高中</strong><br>普通科（畢業）</p>
+</div>
+
+<!-- 技能（正常） -->
+<div class="section">
+    <h2>技能 Skills</h2>
+    <ul>
+        <li>
+            <strong>HTML / CSS</strong><br>
+            建立網頁結構與樣式（負責版面與視覺呈現）
+        </li>
+        <li>
+            <strong>JavaScript</strong><br>
+            製作網頁互動功能（如按鈕效果、資料處理）
+        </li>
+        <li>
+            <strong>Git / GitHub</strong><br>
+            版本控制與程式碼管理（用於專案紀錄與團隊協作）
+        </li>
+    </ul>
+</div>
+
+<!-- 特殊技能（你的風格） -->
+<div class="section">
+    <h2>特殊技能</h2>
     <ul>
         <li>打遊戲罵隊友不帶髒字</li>
         <li>睡覺只睡三小時就開機</li>
         <li>跌倒了就躺好</li>
     </ul>
+</div>
 
-    <button onclick="sayHi()">點我</button>
+<!-- 興趣 -->
+<div class="section">
+    <h2>興趣</h2>
+    <ul>
+        <li>聽音樂 🎧</li>
+        <li>打遊戲 🎮</li>
+        <li>追劇 📺</li>
+    </ul>
+</div>
 
-    <!-- 音樂來源 -->
-    <p style="font-size:12px;color:#aaa;margin-top:20px;">
+<!-- 聯絡 -->
+<div class="section">
+    <h2>聯絡方式</h2>
+    <p>Email：<a href="mailto:example@email.com">example@email.com</a></p>
+</div>
+
+<!-- 音樂來源 -->
+<div class="section">
+    <p style="font-size:12px;color:#aaa;">
     🎵 Music: Advertising - Scandinavianz
     </p>
 </div>
@@ -118,8 +180,8 @@ button {
 let audio = document.getElementById("bgm");
 audio.volume = 0;
 
-function sayHi(){
-    alert("你好！歡迎來看我的履歷！");
+function welcome(){
+    alert("歡迎光臨我的履歷網站！");
 }
 
 function fadeIn() {
